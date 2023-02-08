@@ -17,7 +17,7 @@ class PersonFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake() -> firstName(),
+            'first_name' => fake() -> firstName(),
             'last_name' => fake() -> lastName(),
             'date_of_birth' => fake() -> dateTime(),
             'height' => fake() -> boolean()
