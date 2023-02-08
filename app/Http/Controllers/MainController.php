@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Person;
 
 class MainController extends Controller
-{
+{   
+    //HOME
     public function home() {
 
         $people = Person :: all();
@@ -17,6 +18,12 @@ class MainController extends Controller
         // ];
 
         return view('pages.home', compact('people'));
+    }
+
+    //SHOW 
+    public function personShow(Person $person) {
+
+        return view('pages.personShow', compact('person'));
     }
     
 }
