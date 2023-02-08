@@ -5,9 +5,13 @@
     <h1>People</h1>
     <ul>
         @foreach ($people as $person)
+        <li>
             <a href="{{ route('person.show', $person) }}">
-                <li>{{ $person -> first_name }} {{ $person -> last_name }}</li>
+                {{ $person -> first_name }} {{ $person -> last_name }}
             </a>
+
+            <a href="{{ route('person.delete', $person) }}">X</a>
+        </li>
         @endforeach
     </ul>
 
