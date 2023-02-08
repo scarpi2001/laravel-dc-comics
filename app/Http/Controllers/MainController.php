@@ -33,5 +33,35 @@ class MainController extends Controller
     
         return redirect() -> route('home');
     }
+
+    //CREATE
+    public function personCreate() {
+
+        return view('pages.personCreate');
+    }
+
+    public function personStore(Request $request) {
+
+        $data = $request -> validate([
+            'first_name' => 'required|string|max:32',
+            'last_name' => 'required|string|max:32',
+            'date_of_birth' => 'required|date',
+            'height' => 'nullable|integer|min:40|max:300',
+        ]);
+    
+        $person = new Person();
+    
+        $person -> first_name = $data['first_name'];
+        $person -> last_name = $data['last_name'];
+        $person -> height = $data['height'];
+        $person -> date_of_birth = $data['date_of_birth'];
+        
+        $person -> save();
+    
+        return redirect() -> route('home');
+    }
     
 }
+
+
+

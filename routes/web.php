@@ -26,3 +26,10 @@ Route :: get('/person/show/{person}', [MainController :: class, 'personShow'])
 //DELETE
 Route :: get('/person/delete/{person}', [MainController :: class, 'personDelete'])
     -> name('person.delete');
+
+//CREATE
+Route :: get('/person/create', [MainController :: class, 'personCreate'])
+    -> name('person.create');
+
+Route :: post('/person/store', [MainController :: class, 'personStore'])
+    -> name('person.store');
